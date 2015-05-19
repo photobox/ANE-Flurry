@@ -10,8 +10,8 @@
 		195154ED17C2CA2600AFA5A8 /* FlashRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 195154EC17C2CA2600AFA5A8 /* FlashRuntimeExtensions.h */; };
 		5AF8AF16153DE65D000A8447 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF8AF15153DE65D000A8447 /* Foundation.framework */; };
 		5AF8AF1C153DE65D000A8447 /* AirFlurry.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF8AF1B153DE65D000A8447 /* AirFlurry.m */; };
+		C0C6F59E1B0B621F00BA59CC /* libFlurry_6.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0C6F59D1B0B621F00BA59CC /* libFlurry_6.4.0.a */; };
 		FA20572D15E2AA1600030F51 /* Flurry.h in Headers */ = {isa = PBXBuildFile; fileRef = FA20572715E2AA1600030F51 /* Flurry.h */; };
-		FA20572E15E2AA1600030F51 /* libFlurry.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FA20572815E2AA1600030F51 /* libFlurry.a */; };
 		FAD8E79A15E8409900BAD3C3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD8E79915E8409900BAD3C3 /* SystemConfiguration.framework */; };
 		FAD8E7A415E840DD00BAD3C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD8E7A315E840DD00BAD3C3 /* UIKit.framework */; };
 		FAFF2C8517BBCCA9007D48DD /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF2C8417BBCCA9007D48DD /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -25,8 +25,8 @@
 		5AF8AF19153DE65D000A8447 /* AirFlurry-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirFlurry-Prefix.pch"; sourceTree = "<group>"; };
 		5AF8AF1A153DE65D000A8447 /* AirFlurry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirFlurry.h; sourceTree = "<group>"; };
 		5AF8AF1B153DE65D000A8447 /* AirFlurry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirFlurry.m; sourceTree = "<group>"; };
+		C0C6F59D1B0B621F00BA59CC /* libFlurry_6.4.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_6.4.0.a; sourceTree = "<group>"; };
 		FA20572715E2AA1600030F51 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
-		FA20572815E2AA1600030F51 /* libFlurry.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry.a; sourceTree = "<group>"; };
 		FAD8E79915E8409900BAD3C3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FAD8E7A315E840DD00BAD3C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAFF2C8417BBCCA9007D48DD /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -38,12 +38,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0C6F59E1B0B621F00BA59CC /* libFlurry_6.4.0.a in Frameworks */,
 				FAFF2C8717BBCCB4007D48DD /* Security.framework in Frameworks */,
 				FAFF2C8517BBCCA9007D48DD /* AdSupport.framework in Frameworks */,
 				FAD8E7A415E840DD00BAD3C3 /* UIKit.framework in Frameworks */,
 				FAD8E79A15E8409900BAD3C3 /* SystemConfiguration.framework in Frameworks */,
 				5AF8AF16153DE65D000A8447 /* Foundation.framework in Frameworks */,
-				FA20572E15E2AA1600030F51 /* libFlurry.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,8 +102,8 @@
 		FA20572615E2AA1600030F51 /* Flurry */ = {
 			isa = PBXGroup;
 			children = (
+				C0C6F59D1B0B621F00BA59CC /* libFlurry_6.4.0.a */,
 				FA20572715E2AA1600030F51 /* Flurry.h */,
-				FA20572815E2AA1600030F51 /* libFlurry.a */,
 			);
 			path = Flurry;
 			sourceTree = "<group>";
@@ -146,7 +146,7 @@
 		5AF8AF09153DE65D000A8447 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0430;
+				LastUpgradeCheck = 0630;
 			};
 			buildConfigurationList = 5AF8AF0C153DE65D000A8447 /* Build configuration list for PBXProject "AirFlurry" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -181,7 +181,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -196,6 +195,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
+				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -204,7 +204,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
 				COPY_PHASE_STRIP = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_VERSION = com.apple.compilers.llvmgcc42;
@@ -220,7 +219,6 @@
 		5AF8AF20153DE65D000A8447 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/AirFlurry.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AirFlurry/AirFlurry-Prefix.pch";
@@ -234,6 +232,7 @@
 					"\"$(SRCROOT)/Networks\"",
 					"\"$(SRCROOT)/Networks/Greystripe\"",
 					"\"$(SRCROOT)/Networks/Jumptap\"",
+					"$(PROJECT_DIR)/Flurry",
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -246,7 +245,6 @@
 		5AF8AF21153DE65D000A8447 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD)";
 				DSTROOT = /tmp/AirFlurry.dst;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AirFlurry/AirFlurry-Prefix.pch";
@@ -260,6 +258,7 @@
 					"\"$(SRCROOT)/Networks\"",
 					"\"$(SRCROOT)/Networks/Greystripe\"",
 					"\"$(SRCROOT)/Networks/Jumptap\"",
+					"$(PROJECT_DIR)/Flurry",
 				);
 				OTHER_LDFLAGS = "";
 				PRODUCT_NAME = "$(TARGET_NAME)";

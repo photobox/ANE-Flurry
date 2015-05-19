@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>34DC1F55-316C-4617-9529-D64F9DD43F44</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AirFlurry</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>6F2476B239727C24D88156380A8CFCDD86B505DB</key>
+		<string>https://github.com/photobox/ANE-Flurry.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>ios/AirFlurry.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>6F2476B239727C24D88156380A8CFCDD86B505DB</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/photobox/ANE-Flurry.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>6F2476B239727C24D88156380A8CFCDD86B505DB</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>6F2476B239727C24D88156380A8CFCDD86B505DB</string>
+			<key>IDESourceControlWCCName</key>
+			<string>ANE-Flurry</string>
+		</dict>
+	</array>
+</dict>
+</plist>
