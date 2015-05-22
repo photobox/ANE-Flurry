@@ -325,16 +325,14 @@ package com.freshplanet.nativeExtensions
 		private static var _iOSCrashReportingEnabled : Boolean = false;
 		private static var _ANEStarted = false;
 
-		private static var _iOSApiKey : String = null;
-		private static var _androidApiKey : String = null;
+		private static var _iOSApiKey : String;
+		private static var _androidApiKey : String;
 
 		private static function call( ...args ) : *
 		{
 			if ( !isSupported ) return null;
 
 			if ( !_context ) throw new Error( "Extension context is null. Please check if extension.xml is setup correctly." );
-
-			log( "methods call " + args[ 0 ] );
 
 			return _context.call.apply( _context, args );
 		}
