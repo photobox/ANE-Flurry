@@ -52,12 +52,12 @@ public class StopTimedEventFunction implements FREFunction {
 		}
 
 		if (eventName != null) {
-			Log.d(TAG, "timed event name "+eventName);
+			Log.d(TAG, "timed event name " + eventName);
 			FlurryAgent.endTimedEvent(eventName);
 		} else {
 			Log.d(TAG, "null event name");
 		}
-		
+
 		return null;
 	}
 

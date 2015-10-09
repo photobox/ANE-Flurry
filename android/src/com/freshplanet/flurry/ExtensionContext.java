@@ -36,23 +36,19 @@ import com.freshplanet.flurry.functions.analytics.StartTimedEventFunction;
 import com.freshplanet.flurry.functions.analytics.StopSessionFunction;
 import com.freshplanet.flurry.functions.analytics.StopTimedEventFunction;
 
-public class ExtensionContext extends FREContext
-{	
-	public ExtensionContext()
-	{
+public class ExtensionContext extends FREContext {
+	public ExtensionContext() {
 		Log.d(Extension.TAG, "Context created.");
 	}
-	
+
 	@Override
-	public void dispose()
-	{
+	public void dispose() {
 		Log.d(Extension.TAG, "Context disposed.");
 		Extension.context = null;
 	}
 
 	@Override
-	public Map<String, FREFunction> getFunctions()
-	{
+	public Map<String, FREFunction> getFunctions() {
 		Map<String, FREFunction> functionMap = new HashMap<String, FREFunction>();
 		functionMap.put("startSession", new StartSessionFunction());
 		functionMap.put("stopSession", new StopSessionFunction());
@@ -64,7 +60,7 @@ public class ExtensionContext extends FREContext
 		functionMap.put("setSendEventsOnPause", new SetSendEventsOnPauseFunction());
 		functionMap.put("startTimedEvent", new StartTimedEventFunction());
 		functionMap.put("stopTimedEvent", new StopTimedEventFunction());
-		
-		return functionMap;	
+
+		return functionMap;
 	}
 }

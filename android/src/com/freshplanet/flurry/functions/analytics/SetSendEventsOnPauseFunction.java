@@ -28,7 +28,7 @@ public class SetSendEventsOnPauseFunction implements FREFunction {
 	public FREObject call(FREContext arg0, FREObject[] arg1) {
 
 		// dont do anything, created only for ios compatibility
-		
+
 		return null;
 	}
 

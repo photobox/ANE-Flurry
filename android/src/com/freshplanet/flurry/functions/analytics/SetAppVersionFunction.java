@@ -17,6 +17,7 @@
 //////////////////////////////////////////////////////////////////////////////////////
 
 package com.freshplanet.flurry.functions.analytics;
+
 import android.util.Log;
 
 import com.adobe.fre.FREContext;
@@ -35,7 +36,7 @@ public class SetAppVersionFunction implements FREFunction {
 	public FREObject call(FREContext arg0, FREObject[] arg1) {
 
 		String versionName = null;
-		
+
 		try {
 			versionName = arg1[0].getAsString();
 		} catch (IllegalStateException e) {
@@ -50,13 +51,12 @@ public class SetAppVersionFunction implements FREFunction {
 			e.printStackTrace();
 		}
 
-		if (versionName != null)
-		{
+		if (versionName != null) {
 			FlurryAgent.setVersionName(versionName);
 		} else {
 			Log.e(Extension.TAG, "version Name is null");
 		}
-		
+
 		return null;
 	}
 

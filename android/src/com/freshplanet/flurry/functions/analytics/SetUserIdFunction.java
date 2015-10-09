@@ -36,7 +36,7 @@ public class SetUserIdFunction implements FREFunction {
 	public FREObject call(FREContext arg0, FREObject[] arg1) {
 
 		String userId = null;
-		
+
 		try {
 			userId = arg1[0].getAsString();
 		} catch (IllegalStateException e) {
@@ -50,16 +50,14 @@ public class SetUserIdFunction implements FREFunction {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		if (userId != null)
-		{
+
+		if (userId != null) {
 			FlurryAgent.setUserId(userId);
-		} else
-		{
+		} else {
 			Log.e(TAG, "user id is null");
 		}
 
-		
+
 		return null;
 	}
 

@@ -23,26 +23,22 @@ import android.util.Log;
 import com.adobe.fre.FREContext;
 import com.adobe.fre.FREExtension;
 
-public class Extension implements FREExtension
-{
+public class Extension implements FREExtension {
 	public static String TAG = "AirFlurry";
 	public static FREContext context;
 
-	
-	public FREContext createContext(String extId)
-	{
+
+	public FREContext createContext(String extId) {
 		context = new ExtensionContext();
 		return context;
 	}
 
-	public void dispose()
-	{
+	public void dispose() {
 		Log.d(TAG, "Extension disposed.");
 		context = null;
 	}
-	
-	public void initialize()
-	{
+
+	public void initialize() {
 		Log.d(TAG, "Extension initialized.");
 	}
 }

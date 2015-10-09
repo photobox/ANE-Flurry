@@ -17,6 +17,7 @@
 //////////////////////////////////////////////////////////////////////////////////////
 
 package com.freshplanet.flurry.functions.analytics;
+
 import android.util.Log;
 
 import com.adobe.fre.FREContext;
@@ -35,9 +36,9 @@ public class LogErrorFunction implements FREFunction {
 	@Override
 	public FREObject call(FREContext arg0, FREObject[] arg1) {
 
-		
+
 		String errorId = null;
-		
+
 		try {
 			errorId = arg1[0].getAsString();
 		} catch (IllegalStateException e) {
@@ -53,7 +54,7 @@ public class LogErrorFunction implements FREFunction {
 		}
 
 		String message = "";
-		
+
 		try {
 			message = arg1[1].getAsString();
 		} catch (IllegalStateException e) {
@@ -67,16 +68,14 @@ public class LogErrorFunction implements FREFunction {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		if (errorId != null)
-		{
+
+		if (errorId != null) {
 			FlurryAgent.onError(errorId, message, "");
-		} else
-		{
+		} else {
 			Log.e(TAG, "errorId is null");
 		}
 
-		
+
 		return null;
 	}
 

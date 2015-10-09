@@ -30,9 +30,9 @@ import com.flurry.android.FlurryAgent;
 
 public class StartTimedEventFunction implements FREFunction {
 
-	
+
 	private static String TAG = "StartTimedEventFunction";
-	
+
 	@Override
 	public FREObject call(FREContext arg0, FREObject[] arg1) {
 
@@ -51,17 +51,16 @@ public class StartTimedEventFunction implements FREFunction {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
+
+
 		if (eventName != null) {
-			Log.d(TAG, "timed event name "+eventName);
+			Log.d(TAG, "timed event name " + eventName);
 			FlurryAgent.logEvent(eventName, true);
 		} else {
 			Log.d(TAG, "null event name");
 		}
 
-		
-		
+
 		return null;
 	}
 

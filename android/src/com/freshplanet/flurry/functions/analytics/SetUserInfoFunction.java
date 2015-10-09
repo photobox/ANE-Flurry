@@ -37,7 +37,7 @@ public class SetUserInfoFunction implements FREFunction {
 	public FREObject call(FREContext arg0, FREObject[] arg1) {
 
 		int age = 0;
-		
+
 		try {
 			age = arg1[0].getAsInt();
 		} catch (IllegalStateException e) {
@@ -51,32 +51,27 @@ public class SetUserInfoFunction implements FREFunction {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		if (age > 0)
-		{
-			Log.d(TAG, "age: "+Integer.toString(age));
+
+		if (age > 0) {
+			Log.d(TAG, "age: " + Integer.toString(age));
 
 			FlurryAgent.setAge(age);
-		}  else
-		{
+		} else {
 			Log.d(TAG, "age is null");
 		}
-		
+
 		String genderString = null;
-		
+
 		byte gender = 0;
 		Boolean hasGender = false;
 		try {
 			genderString = arg1[1].getAsString();
-			Log.d(TAG, "gender: "+genderString);
-			if (genderString.compareTo("m") == 0)
-			{
+			Log.d(TAG, "gender: " + genderString);
+			if (genderString.compareTo("m") == 0) {
 				Log.d(TAG, "gender Male");
 				hasGender = true;
 				gender = Constants.MALE;
-			}
-			else if (genderString.compareTo("f") == 0)
-			{
+			} else if (genderString.compareTo("f") == 0) {
 				Log.d(TAG, "gender Female");
 				hasGender = true;
 				gender = Constants.FEMALE;
@@ -92,13 +87,11 @@ public class SetUserInfoFunction implements FREFunction {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
-		
-		if (hasGender)
-		{
+
+
+		if (hasGender) {
 			FlurryAgent.setGender(gender);
-		} else
-		{
+		} else {
 			Log.d(TAG, "gender is null");
 		}
 
