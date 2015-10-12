@@ -29,7 +29,7 @@
         <delete dir="../temp/ios/build/"/>
     </target>
 
-    <!-- Android -->
+    <!-- Android
     <target name="android" description="Build Android Library">
         <delete dir="../android/temp"/>
         <mkdir dir="../android/temp/classes"/>
@@ -51,7 +51,17 @@
         <mkdir dir="../temp/android/"/>
         <jar basedir="../android/temp/classes" destfile="../temp/android/lib${name}.jar"/>
         <delete dir="../android/temp"/>
-    </target>
+    </target>-->
+
+	<!-- Android -->
+	<target name="android" description="Build Android Library with debugging disabled">
+		<ant inheritAll="false" antfile="../android/build/build.xml" target="library"/>
+
+		<mkdir dir="../temp/android"/>
+
+		<copy file="../android/bin/lib${name}.jar" todir="../temp/android" overwrite="true"/>
+		<copy file="../android/libs/FlurryAnalytics-6.1.0.jar" todir="../temp/android" overwrite="true"/>
+	</target>
 
     <!-- Actionscript -->
     <target name="swc" description="Build SWC library">
@@ -91,7 +101,7 @@
             <arg value="../build/extension.xml"/>
             <arg line="-swc swc/${name}.swc"/>
             <arg line="-platform iPhone-ARM -platformoptions ../build/platform.xml -C ios/ ."/>
-            <arg line="-platform Android-ARM -C android/ ."/>
+            <arg line="-platform Android-ARM -platformoptions ../build/platformoptions-android.xml -C android/ ."/>
             <arg line="-platform default -C default/ ."/>
         </exec>
 

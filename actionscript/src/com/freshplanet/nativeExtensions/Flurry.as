@@ -32,11 +32,11 @@ package com.freshplanet.nativeExtensions
 		// 																						 //
 		// --------------------------------------------------------------------------------------//
 
-		public static const MALE_GENDER : String = "m";
-		public static const FEMALE_GENDER : String = "f";
+		public static const MALE_GENDER:String   = "m";
+		public static const FEMALE_GENDER:String = "f";
 
 		/** Flurry is supported on iOS and Android devices. */
-		public static function get isSupported() : Boolean
+		public static function get isSupported():Boolean
 		{
 			return isAndroid || isIOS;
 		}
@@ -45,12 +45,12 @@ package com.freshplanet.nativeExtensions
 		 * If <code>true</code>, logs will be displayed at the Actionscript level.
 		 * If <code>false</code>, logs will be displayed only at the native level.
 		 */
-		public static function get verbose() : Boolean
+		public static function get verbose():Boolean
 		{
 			return _verbose;
 		}
 
-		public static function set verbose( value : Boolean ) : void
+		public static function set verbose(value:Boolean):void
 		{
 			_verbose = value;
 		}
@@ -61,20 +61,20 @@ package com.freshplanet.nativeExtensions
 		 *
 		 * You can only have one crash handler per app on iOS, so this feature is disabled by default.
 		 */
-		public static function get iOSCrashReportingEnabled() : Boolean
+		public static function get iOSCrashReportingEnabled():Boolean
 		{
 			return _iOSCrashReportingEnabled;
 		}
 
-		public static function set iOSCrashReportingEnabled( value : Boolean ) : void
+		public static function set iOSCrashReportingEnabled(value:Boolean):void
 		{
 			_iOSCrashReportingEnabled = value;
 
-			if ( isIOS )
+			if (isIOS)
 			{
-				log( "iOS crash reporting " + (_iOSCrashReportingEnabled ? "enabled" : "disabled") );
+				log("iOS crash reporting " + (_iOSCrashReportingEnabled ? "enabled" : "disabled"));
 
-				call( "setCrashReportingEnabled", _iOSCrashReportingEnabled );
+				call("setCrashReportingEnabled", _iOSCrashReportingEnabled);
 			}
 		}
 
@@ -84,12 +84,12 @@ package com.freshplanet.nativeExtensions
 		 *
 		 * It's important option, if you don't use this parameters, you don't see analytics on Flurry.
 		 */
-		public static function setIOSAPIKey( apiKey : String ) : void
+		public static function setIOSAPIKey(apiKey:String):void
 		{
 			_iOSApiKey = apiKey;
 		}
 
-		public static function setAndroidAPIKey( apiKey : String ) : void
+		public static function setAndroidAPIKey(apiKey:String):void
 		{
 			_androidApiKey = apiKey;
 		}
@@ -100,11 +100,11 @@ package com.freshplanet.nativeExtensions
 		 *
 		 * Note: There is a maximum of 605 versions allowed for a single app.
 		 */
-		public static function setAppVersion( versionName : String ) : void
+		public static function setAppVersion(versionName:String):void
 		{
-			log( "Set app version to " + versionName );
+			log("Set app version to " + versionName);
 
-			call( "setAppVersion", versionName );
+			call("setAppVersion", versionName);
 		}
 
 		/**
@@ -114,35 +114,35 @@ package com.freshplanet.nativeExtensions
 		 * Note: You must set your API keys with <code>setIOSAPIKey()</code> and/or <code>setAndroidAPIKey</code>
 		 * before calling <code>startSession()</code>.
 		 */
-		public static function startSession() : void
+		public static function startSession():void
 		{
-			var apiKey : String = getApiKeyFromDevice();
+			var apiKey:String = getApiKeyFromDevice();
 
-			if ( apiKey )
+			if (apiKey)
 			{
-				log( "Start session with API key " + apiKey );
+				log("Start session with API key " + apiKey);
 
-				if ( !_ANEStarted )
-					_context.addEventListener( StatusEvent.STATUS, onStatus );
+				if (!_ANEStarted)
+					_context.addEventListener(StatusEvent.STATUS, onStatus);
 
-				call( "startSession", apiKey );
+				call("startSession", apiKey);
 
 				_ANEStarted = true;
 			}
 		}
 
-		public static function stopSession() : void
+		public static function stopSession():void
 		{
-			log( "Stop session" );
+			log("Stop session");
 
-			call( "stopSession" )
+			call("stopSession")
 		}
 
-		public static function setUserId( userId : String ) : void
+		public static function setUserId(userId:String):void
 		{
-			log( "Set user ID to " + userId );
+			log("Set user ID to " + userId);
 
-			call( "setUserId", userId )
+			call("setUserId", userId)
 		}
 
 		/**
@@ -150,29 +150,29 @@ package com.freshplanet.nativeExtensions
 		 * @param gender Must be one of the two defined constants <code>MALE_GENDER</code> or
 		 *     <code>FEMALE_GENDER</code>.
 		 */
-		public static function setUserInfo( age : int, gender : String ) : void
+		public static function setUserInfo(age:int, gender:String):void
 		{
-			if ( age <= 0 )
+			if (age <= 0)
 			{
-				log( "Couldn't set user info. Age must be > 0 (value provided: " + age + ")" );
+				log("Couldn't set user info. Age must be > 0 (value provided: " + age + ")");
 
 				return;
 			}
-			else if ( gender != MALE_GENDER && gender != FEMALE_GENDER )
+			else if (gender != MALE_GENDER && gender != FEMALE_GENDER)
 			{
-				log( "Couldn't set user info. Gender must be Flurry.MALE_GENDER or Flurry.FEMALE_GENDER (value provided: " + gender + ")" );
+				log("Couldn't set user info. Gender must be Flurry.MALE_GENDER or Flurry.FEMALE_GENDER (value provided: " + gender + ")");
 
 				return;
 			}
 
-			log( "Set user info - Age = " + age + " - Gender = " + gender );
+			log("Set user info - Age = " + age + " - Gender = " + gender);
 
-			call( "setUserInfo", age, gender );
+			call("setUserInfo", age, gender);
 		}
 
-		public static function setSendEventsOnPause( value : Boolean ) : void
+		public static function setSendEventsOnPause(value:Boolean):void
 		{
-			call( "setSendEventsOnPause", value )
+			call("setSendEventsOnPause", value)
 		}
 
 		/**
@@ -191,87 +191,88 @@ package com.freshplanet.nativeExtensions
 		 * <li>Key and value names must be below 255 characters</li>
 		 * </ul>
 		 */
-		public static function logEvent( eventName : String, properties : Object = null ) : void
+		public static function logEvent(eventName:String, properties:Object = null):void
 		{
-			var strProperties : String;
-			var parameterKeys : Array = [];
-			var parameterValues : Array = [];
-			var value : String;
-			var count : int = 0;
+			var strProperties:String;
+			var parameterKeys:Array   = [];
+			var parameterValues:Array = [];
+			var value:String;
+			var count:int             = 0;
 
-			if ( !checkLength( eventName ) )
+			if (!checkLength(eventName))
 			{
-				log( "Couldn't log event " + eventName + " (too long)" );
+				log("Couldn't log event " + eventName + " (too long)");
 
 				return;
 			}
 
 			try
 			{
-				strProperties = properties ? " - " + JSON.stringify( properties ) : "";
-			} catch ( e : Error )
+				strProperties = properties ? " - " + JSON.stringify(properties) : "";
+			}
+			catch (e:Error)
 			{
 				strProperties = " - Couldn't unserialize the event properties!";
 			}
 
-			log( "Log event - " + eventName + strProperties );
+			log("Log event - " + eventName + strProperties);
 
-			if ( properties )
+			if (properties)
 			{
-				for ( var key : String in properties )
+				for (var key:String in properties)
 				{
-					if ( count > 10 )
+					if (count > 10)
 					{
-						log( "Too many properties provided. Only kept " + JSON.stringify( parameterKeys ) );
+						log("Too many properties provided. Only kept " + JSON.stringify(parameterKeys));
 
 						break;
 					}
 
-					value = properties[ key ].toString();
+					value = properties[key].toString();
 
-					if ( checkLength( value ) && checkLength( key ) )
+					if (checkLength(value) && checkLength(key))
 					{
-						parameterKeys.push( key );
-						parameterValues.push( value );
+						parameterKeys.push(key);
+						parameterValues.push(value);
 					}
 					else
 					{
-						log( "Skipped property " + key + ". Value " + value + " was too long" );
+						log("Skipped property " + key + ". Value " + value + " was too long");
 					}
 
 					count++;
 				}
 			}
 
-			call( "logEvent", eventName, parameterKeys, parameterValues );
+			call("logEvent", eventName, parameterKeys, parameterValues);
 		}
 
-		public static function startTimedEvent( eventName : String ) : void
+		public static function startTimedEvent(eventName:String):void
 		{
-			if ( !checkLength( eventName ) )
+			if (!checkLength(eventName))
 			{
-				log( "Couldn't start timed event " + eventName + " (too long)" );
+				log("Couldn't start timed event " + eventName + " (too long)");
 
 				return;
 			}
 
-			log( "Start timed event - " + eventName );
+			log("Start timed event - " + eventName);
 
-			call( "startTimedEvent", eventName )
+			call("startTimedEvent", eventName)
 		}
 
-		public static function stopTimedEvent( eventName : String ) : void
+		public static function stopTimedEvent(eventName:String):void
 		{
-			if ( !checkLength( eventName ) )
+			if (!checkLength(eventName))
 			{
-				log( "Couldn't stop timed event " + eventName + " (too long)" );
+				log("Couldn't stop timed event " + eventName + " (too long)");
 
 				return;
 			}
 
-			log( "Stop timed event - " + eventName );
+			log("Stop timed event - " + eventName);
 
-			call( "stopTimedEvent", eventName )
+			call("stopTimedEvent", eventName)
 		}
 
 		/**
@@ -284,30 +285,30 @@ package com.freshplanet.nativeExtensions
 		 * <li>Error ID and message are truncated to 255 characters.</li>
 		 * </ul>
 		 */
-		public function logError( errorId : String, message : String = null ) : void
+		public function logError(errorId:String, message:String = null):void
 		{
-			if ( !errorId )
+			if (!errorId)
 			{
-				log( "Couldn't log error. You need to provide an error ID." );
+				log("Couldn't log error. You need to provide an error ID.");
 
 				return;
 			}
 
-			if ( errorId.length > 255 )
+			if (errorId.length > 255)
 			{
-				errorId = errorId.substr( 0, 255 );
+				errorId = errorId.substr(0, 255);
 			}
 
 			message = message || "";
 
-			if ( message.length > 255 )
+			if (message.length > 255)
 			{
-				message = message.substr( 0, 255 );
+				message = message.substr(0, 255);
 			}
 
-			log( "Log error - " + errorId + (message.length > 0 ? " - " + message : "") )
+			log("Log error - " + errorId + (message.length > 0 ? " - " + message : ""))
 
-			call( "logError", errorId, message )
+			call("logError", errorId, message)
 		}
 
 		// --------------------------------------------------------------------------------------//
@@ -316,41 +317,41 @@ package com.freshplanet.nativeExtensions
 		// 																						 //
 		// --------------------------------------------------------------------------------------//
 
-		private static const EXTENSION_ID : String = "com.freshplanet.AirFlurry";
-		private static const ANE_NAME : String = "Flurry";
+		private static const EXTENSION_ID:String = "com.freshplanet.AirFlurry";
+		private static const ANE_NAME:String     = "Flurry";
 
-		private static var _context : ExtensionContext = ExtensionContext.createExtensionContext( EXTENSION_ID, null );
+		private static var _context:ExtensionContext = ExtensionContext.createExtensionContext(EXTENSION_ID, null);
 
-		private static var _verbose : Boolean = false;
-		private static var _iOSCrashReportingEnabled : Boolean = false;
-		private static var _ANEStarted = false;
+		private static var _verbose:Boolean                  = false;
+		private static var _iOSCrashReportingEnabled:Boolean = false;
+		private static var _ANEStarted:Boolean               = false;
 
-		private static var _iOSApiKey : String;
-		private static var _androidApiKey : String;
+		private static var _iOSApiKey:String;
+		private static var _androidApiKey:String;
 
-		private static function call( ...args ) : *
+		private static function call(...args):*
 		{
-			if ( !isSupported ) return null;
+			if (!isSupported) return null;
 
-			if ( !_context ) throw new Error( "Extension context is null. Please check if extension.xml is setup correctly." );
+			if (!_context) throw new Error("Extension context is null. Please check if extension.xml is setup correctly.");
 
-			return _context.call.apply( _context, args );
+			return _context.call.apply(_context, args);
 		}
 
-		private static function log( message : String ) : void
+		private static function log(message:String):void
 		{
-			if ( _verbose ) trace( "[ " + ANE_NAME + " ] " + message );
+			if (_verbose) trace("[ " + ANE_NAME + " ] " + message);
 		}
 
 		//
 		// ---> Events
 		//
 
-		private static function onStatus( event : StatusEvent ) : void
+		private static function onStatus(event:StatusEvent):void
 		{
-			if ( event.code == "LOGGING" )
+			if (event.code == "LOGGING")
 			{
-				log( event.level );
+				log(event.level);
 			}
 		}
 
@@ -358,31 +359,31 @@ package com.freshplanet.nativeExtensions
 		// ---> Tools
 		//
 
-		private static function get isAndroid() : Boolean
+		private static function get isAndroid():Boolean
 		{
-			return Capabilities.manufacturer.indexOf( "Android" ) > -1;
+			return Capabilities.manufacturer.indexOf("Android") > -1;
 		}
 
-		private static function get isIOS() : Boolean
+		private static function get isIOS():Boolean
 		{
-			return Capabilities.manufacturer.indexOf( "iOS" ) > -1;
+			return Capabilities.manufacturer.indexOf("iOS") > -1;
 		}
 
-		private static function checkLength( value : String ) : Boolean
+		private static function checkLength(value:String):Boolean
 		{
 			return value && value.length < 255;
 		}
 
-		private static function getApiKeyFromDevice() : String
+		private static function getApiKeyFromDevice():String
 		{
-			var APIKey : String = null;
+			var APIKey:String = null;
 
-			if ( isAndroid )
+			if (isAndroid)
 			{
 				APIKey = _androidApiKey;
 			}
 
-			if ( isIOS )
+			if (isIOS)
 			{
 				APIKey = _iOSApiKey;
 			}

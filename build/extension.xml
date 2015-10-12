@@ -16,7 +16,7 @@
 //  
 //////////////////////////////////////////////////////////////////////////////////////-->
 
-<extension xmlns="http://ns.adobe.com/air/extension/16.0">
+<extension xmlns="http://ns.adobe.com/air/extension/19.0">
     <id>com.freshplanet.AirFlurry</id>
         <versionNumber>1.0</versionNumber>
         <platforms>
