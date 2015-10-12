@@ -10,8 +10,9 @@
 		195154ED17C2CA2600AFA5A8 /* FlashRuntimeExtensions.h in Headers */ = {isa = PBXBuildFile; fileRef = 195154EC17C2CA2600AFA5A8 /* FlashRuntimeExtensions.h */; };
 		5AF8AF16153DE65D000A8447 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5AF8AF15153DE65D000A8447 /* Foundation.framework */; };
 		5AF8AF1C153DE65D000A8447 /* AirFlurry.m in Sources */ = {isa = PBXBuildFile; fileRef = 5AF8AF1B153DE65D000A8447 /* AirFlurry.m */; };
-		C0C6F59E1B0B621F00BA59CC /* libFlurry_6.4.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C0C6F59D1B0B621F00BA59CC /* libFlurry_6.4.0.a */; };
-		FA20572D15E2AA1600030F51 /* Flurry.h in Headers */ = {isa = PBXBuildFile; fileRef = FA20572715E2AA1600030F51 /* Flurry.h */; };
+		8AF971761BBD318C00FFE3C1 /* Flurry.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AF971731BBD318C00FFE3C1 /* Flurry.h */; settings = {ASSET_TAGS = (); }; };
+		8AF971771BBD318C00FFE3C1 /* FlurryWatch.h in Headers */ = {isa = PBXBuildFile; fileRef = 8AF971741BBD318C00FFE3C1 /* FlurryWatch.h */; settings = {ASSET_TAGS = (); }; };
+		8AF971781BBD318C00FFE3C1 /* libFlurry_7.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 8AF971751BBD318C00FFE3C1 /* libFlurry_7.2.0.a */; settings = {ASSET_TAGS = (); }; };
 		FAD8E79A15E8409900BAD3C3 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD8E79915E8409900BAD3C3 /* SystemConfiguration.framework */; };
 		FAD8E7A415E840DD00BAD3C3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAD8E7A315E840DD00BAD3C3 /* UIKit.framework */; };
 		FAFF2C8517BBCCA9007D48DD /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAFF2C8417BBCCA9007D48DD /* AdSupport.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -25,8 +26,9 @@
 		5AF8AF19153DE65D000A8447 /* AirFlurry-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirFlurry-Prefix.pch"; sourceTree = "<group>"; };
 		5AF8AF1A153DE65D000A8447 /* AirFlurry.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AirFlurry.h; sourceTree = "<group>"; };
 		5AF8AF1B153DE65D000A8447 /* AirFlurry.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirFlurry.m; sourceTree = "<group>"; };
-		C0C6F59D1B0B621F00BA59CC /* libFlurry_6.4.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libFlurry_6.4.0.a; sourceTree = "<group>"; };
-		FA20572715E2AA1600030F51 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Flurry.h; sourceTree = "<group>"; };
+		8AF971731BBD318C00FFE3C1 /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = Flurry/Flurry.h; sourceTree = "<group>"; };
+		8AF971741BBD318C00FFE3C1 /* FlurryWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlurryWatch.h; path = Flurry/FlurryWatch.h; sourceTree = "<group>"; };
+		8AF971751BBD318C00FFE3C1 /* libFlurry_7.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_7.2.0.a; path = Flurry/libFlurry_7.2.0.a; sourceTree = "<group>"; };
 		FAD8E79915E8409900BAD3C3 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		FAD8E7A315E840DD00BAD3C3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		FAFF2C8417BBCCA9007D48DD /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
@@ -38,8 +40,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0C6F59E1B0B621F00BA59CC /* libFlurry_6.4.0.a in Frameworks */,
 				FAFF2C8717BBCCB4007D48DD /* Security.framework in Frameworks */,
+				8AF971781BBD318C00FFE3C1 /* libFlurry_7.2.0.a in Frameworks */,
 				FAFF2C8517BBCCA9007D48DD /* AdSupport.framework in Frameworks */,
 				FAD8E7A415E840DD00BAD3C3 /* UIKit.framework in Frameworks */,
 				FAD8E79A15E8409900BAD3C3 /* SystemConfiguration.framework in Frameworks */,
@@ -71,7 +73,9 @@
 			isa = PBXGroup;
 			children = (
 				195154EC17C2CA2600AFA5A8 /* FlashRuntimeExtensions.h */,
-				FA20572615E2AA1600030F51 /* Flurry */,
+				8AF971731BBD318C00FFE3C1 /* Flurry.h */,
+				8AF971741BBD318C00FFE3C1 /* FlurryWatch.h */,
+				8AF971751BBD318C00FFE3C1 /* libFlurry_7.2.0.a */,
 				FAFF2C8417BBCCA9007D48DD /* AdSupport.framework */,
 				FAD8E7A315E840DD00BAD3C3 /* UIKit.framework */,
 				FAD8E79915E8409900BAD3C3 /* SystemConfiguration.framework */,
@@ -99,15 +103,6 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		FA20572615E2AA1600030F51 /* Flurry */ = {
-			isa = PBXGroup;
-			children = (
-				C0C6F59D1B0B621F00BA59CC /* libFlurry_6.4.0.a */,
-				FA20572715E2AA1600030F51 /* Flurry.h */,
-			);
-			path = Flurry;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -115,7 +110,8 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FA20572D15E2AA1600030F51 /* Flurry.h in Headers */,
+				8AF971771BBD318C00FFE3C1 /* FlurryWatch.h in Headers */,
+				8AF971761BBD318C00FFE3C1 /* Flurry.h in Headers */,
 				195154ED17C2CA2600AFA5A8 /* FlashRuntimeExtensions.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -146,7 +142,7 @@
 		5AF8AF09153DE65D000A8447 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0700;
 			};
 			buildConfigurationList = 5AF8AF0C153DE65D000A8447 /* Build configuration list for PBXProject "AirFlurry" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -182,6 +178,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
