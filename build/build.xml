@@ -43,7 +43,7 @@
         </javac>
 
         <mkdir dir="../android/temp/zip"/>
-        <unzip src="../android/libs/FlurryAnalytics-6.1.0.jar" dest="../android/temp/zip"/>
+        <unzip src="../android/libs/FlurryAnalytics-6.2.0.jar" dest="../android/temp/zip"/>
         <copy todir="../android/temp/zip/com">
             <fileset dir="../android/temp/classes/com"/>
         </copy>
@@ -60,7 +60,7 @@
 		<mkdir dir="../temp/android"/>
 
 		<copy file="../android/bin/lib${name}.jar" todir="../temp/android" overwrite="true"/>
-		<copy file="../android/libs/FlurryAnalytics-6.1.0.jar" todir="../temp/android" overwrite="true"/>
+		<copy file="../android/libs/FlurryAnalytics-6.2.0.jar" todir="../temp/android" overwrite="true"/>
 	</target>
 
     <!-- Actionscript -->
